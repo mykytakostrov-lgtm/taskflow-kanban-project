@@ -51,6 +51,7 @@ export default function TaskModal({ initialData, onClose, onSubmit }) {
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
+                setError('');
               }}
               placeholder="Наприклад: Інтегрувати модульні стилі..."
               required
