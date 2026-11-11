@@ -7,7 +7,7 @@ export default function StatsPanel({ tasks }) {
   const inProgressCount = tasks.filter((t) => t.status === 'in_progress').length;
   const doneCount = tasks.filter((t) => t.status === 'done').length;
   const highPriorityCount = tasks.filter((t) => t.priority === 'high' && t.status !== 'done').length;
-  const completionRate = Math.round((doneCount / total) * 100);
+  const completionRate = total > 0 ? Math.round((doneCount / total) * 100) : 0;
 
   return (
     <section className={styles.statsSection} aria-label="Статистика проєкту">
