@@ -16,10 +16,10 @@ export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
 
-  const assignees = (() => {
+  const assignees = useMemo(() => {
     const set = new Set(tasks.map((t) => t.assignee).filter(Boolean));
     return Array.from(set);
-  })();
+  }, [tasks]);
 
   const filteredTasks = useMemo(() => {
     const query = filters.searchQuery.trim().toLowerCase();
