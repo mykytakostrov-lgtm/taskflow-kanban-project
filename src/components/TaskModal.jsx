@@ -15,7 +15,7 @@ export default function TaskModal({ initialData, onClose, onSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (title.length < 3) {
+    if (title.trim().length < 3) {
       setError('Назва задачі повинна містити щонайменше 3 символи.');
       return;
     }
